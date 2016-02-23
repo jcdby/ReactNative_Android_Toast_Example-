@@ -8,15 +8,19 @@ import React, {
   Component,
   StyleSheet,
   Text,
-  NativeModules,
+  NativeModules, //import android native modules
   View
 } from 'react-native';
 
 class RNtestModule extends Component {
 
   render() {
-    var input : string = "Hello";
+    var input : string = "goodbye";
     NativeModules.Toast.show('Awesome', NativeModules.Toast.SHORT);
+    //native module method using Toast
+    NativeModules.Toast.callBackDemo(input, (input) => {
+      console.log(input);
+    });//native module method using callback 
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
