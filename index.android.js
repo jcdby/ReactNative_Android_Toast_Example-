@@ -15,8 +15,8 @@ import React, {
 class RNtestModule extends Component {
 
   render() {
-    var input : string = "lihao";
-    NativeModules.Toast.show('Awesome', 1);
+    var input : string = "Hello";
+    NativeModules.Toast.show('Awesome', NativeModules.Toast.SHORT);
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
