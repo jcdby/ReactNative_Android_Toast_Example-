@@ -12,15 +12,17 @@ import React, {
   View
 } from 'react-native';
 
+var Toast = require('./MyModules/modules');
+
 class RNtestModule extends Component {
 
   render() {
     var input : string = "goodbye";
-    NativeModules.Toast.show('Awesome', NativeModules.Toast.SHORT);
+    Toast.show('Awesome', Toast.SHORT);
     //native module method using Toast
-    NativeModules.Toast.callBackDemo(input, (input) => {
+    Toast.callBackDemo(input, (input) => {
       console.log(input);
-    });//native module method using callback 
+    });//native module method using callback
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
